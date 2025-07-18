@@ -1,0 +1,10 @@
+# netlify.toml
+[build]
+  command = "npm run build"
+  publish = "build"
+  functions = "netlify/functions" # This tells Netlify where your functions are
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
